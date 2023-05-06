@@ -9,19 +9,20 @@ const TransactionSchema = new Schema(
 
     {
         buyer: {
-            type:mongoose.Types.Currency,
-            currency: "USD",
-            get: (v) => v / 100 // Correcting the value
+            type:String,
+            required: true,
         },
         amount: {
             type:mongoose.Types.Currency,
             currency: "USD",
             get: (v) => v / 100 // Correcting the value
         },
-        productsId: [{
+        productIds: [
+            {
             type:mongoose.Schema.Types.ObjectId,
             ref: "Product",
-        }],
+            }
+        ],
     },
     {timestamps: true, toJSON: {getters: true}}
 )
