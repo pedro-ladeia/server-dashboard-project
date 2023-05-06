@@ -49,11 +49,10 @@ mongoose
 })
 .then(async () => {
     app.listen(PORT, () => console.log(`Server port ${PORT}`))
-    
     //Adding data only
     // await mongoose.connection.db.dropDatabase();
     // KPI.insertMany(kpis)
     // Product.insertMany(products)
-    //  Transaction.insertMany(transactions)
+    // Transaction.insertMany(transactions)
 })
 .catch(err => console.log(`${err} did not connect` ));
